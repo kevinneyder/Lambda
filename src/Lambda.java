@@ -13,19 +13,19 @@ public class Lambda {
         Map<String, Integer> map = new HashMap<>();
         map.put("Key1",1);map.put("Key2",2);map.put("Key3",3);map.put("Key4",4);map.put("Key5",5);
         //Ejercicio 1
-        out.println("Ejercicio1:  " +search(list));
+        out.println("Ejercicio1:  \n" +search(list));
         //Ejercicio 2
-        out.println("Ejercicio2:  " +getString(list1));
+        out.println("Ejercicio2:  \n" +getString(list1));
         //Ejercicio 3
-        out.println("Ejercicio3:  " +ejercicio3(list));
+        out.println("Ejercicio3:  \n" +ejercicio3(list));
         //Ejercicio 4
-        out.println("Ejercicio4:  " +ejercicio4(list));
+        out.println("Ejercicio4:  "); ejercicio4(list);
         //Ejercicio 5
-        out.println("Ejercicio5:  " +ejercicio5(list));
+        out.println("Ejercicio5:  "); ejercicio5(list);
         //Ejercicio 6
-        out.println("Ejercicio6:  " +ejercicio6(map));
+        out.println("Ejercicio6:  \n" +ejercicio6(map));
         //Ejercicio7
-        out.print("Ejercicio7:  Thread -> ");
+        out.print("Ejercicio7:  \n");
         ejercicio7(list1,out);
     }
 
@@ -41,12 +41,12 @@ public class Lambda {
         return list.stream().map(s -> s.substring(0,1)).collect(Collectors.joining());
     }
 
-    public static List<String> ejercicio4(List<String> list){
-        return list.stream().filter(s -> s.length() % 2 != 0).collect(Collectors.toList());
+    public static void ejercicio4(List<String> list){
+        out.println(list.stream().map(s -> s.replaceAll("\\s+","")).filter(s -> s.length() % 2 == 0).collect(Collectors.toList()));
     }
 
-    public static List<String> ejercicio5(List<String> list){
-        return list.stream().map(String::toUpperCase).collect(Collectors.toList());
+    public static void ejercicio5(List<String> list){
+        out.println(list.stream().map(String::toUpperCase).collect(Collectors.toList()));
     }
 
     public static String ejercicio6(Map<String, Integer> map){
