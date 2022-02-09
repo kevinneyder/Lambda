@@ -7,7 +7,7 @@ public class Lambda {
 
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
-        list.add("ana");list.add("agua");list.add("Ojo");list.add("ala");list.add("Aaa");list.add("hola");list.add("abc");
+        list.add("ana");list.add("agua");list.add("Ojo");list.add("ala");list.add("a  ");list.add("hola");list.add("abc");
         List<Integer> list1 = new ArrayList<>();
         list1.add(1);list1.add(3);list1.add(5);list1.add(6);list1.add(2);list1.add(8);list1.add(100);list1.add(0);
         Map<String, Integer> map = new HashMap<>();
@@ -30,14 +30,10 @@ public class Lambda {
     }
 
     public static List<String> search(List<String> list){
-        out.print("Ejercicio-----------");
-
-        return list.stream().filter(s -> s.startsWith("a") && s.length() == 3).collect(Collectors.toList());
+        return list.stream().map(s -> s.replaceAll("\\s+","")).filter(s -> s.startsWith("a") && s.length() == 3 ).collect(Collectors.toList());
     }
 
     public static String getString(List<Integer> list){
-        out.print("Ejercicio-----------2");
-
         return list.stream().map(i -> i % 2 == 0 ? "e" + i : "o" + i).collect(Collectors.joining(","));
     }
 
